@@ -1,4 +1,4 @@
-import image from 'src/img/goblin.png';
+import image from './src/img/goblin.png';
 export default class goblinWidjet {
   constructor(element) {
     this._element = element;
