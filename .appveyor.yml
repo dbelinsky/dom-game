@@ -31,4 +31,4 @@ deploy_script: # скрипт развёртывания
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+  - git push https://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@github.com/dbelinsky/dom-game.git HEAD:gh-pages --force
