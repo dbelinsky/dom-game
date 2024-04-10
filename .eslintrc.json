@@ -1,10 +1,11 @@
+
 {
   "plugins": ["prettier"],
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "env": {
     "es6": true,
     "browser": true,
-    "jest/globals": false
+    "jest/globals": true
   },
   "parserOptions": {
     "sourceType": "module"
@@ -15,5 +16,13 @@
       "error", 
       { "singleQuote": true }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": { "jest/prefer-expect-assertions": "off" }
+    }
+  ]
 }
