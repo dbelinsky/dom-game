@@ -1,7 +1,7 @@
-import goblinWidjet from "./goblin.js";
+import goblinWidjet from './goblin.js';
 
-document.addEventListener("DOMContentLoaded", () => {
-  const widjet = new goblinWidjet(document.querySelector(".widjet-container"));
+document.addEventListener('DOMContentLoaded', () => {
+  const widjet = new goblinWidjet(document.querySelector('.widjet-container'));
   let randomNumber = Math.floor(Math.random() * (widjet.childrens.length - 1));
   widjet.putGoblin(randomNumber);
   setInterval(() => {
