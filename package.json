@@ -1,5 +1,5 @@
 {
-  "name": "dom2",
+  "name": "webpack5",
   "version": "1.0.0",
   "description": "[Руководство по настройке Webpack](https://webpack.js.org/guides/) [Руководство по настройке GitHub Actions](https://docs.github.com/en/actions/quickstart)",
   "main": ".src/index.js",
@@ -8,7 +8,6 @@
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint .",
     "test": "jest",
-    "notest": "jest --passWithNoTests",
     "coverage": "jest --coverage",
     "preshow:coverage": "npm run coverage",
     "show:coverage": "live-server coverage/lcov-report",
@@ -39,7 +38,6 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "core-js": "^3.36.1",
-    "stable": "^0.1.8"
+    "core-js": "^3.36.1"
   }
 }
