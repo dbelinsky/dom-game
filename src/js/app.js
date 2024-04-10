@@ -1,20 +1,39 @@
-import goblinWidjet from './goblin.js';
+class GameBoard {
+  constructor(boardSize) {
+    this.boardSize = boardSize ** 2;
+    this.previousIndexCell = 0;
+    this.currentIndexCell = 0;
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const widjet = new goblinWidjet(document.querySelector('.widjet-container'));
-  let randomNumber = Math.floor(Math.random() * (widjet.childrens.length - 1));
-  widjet.putGoblin(randomNumber);
-  setInterval(() => {
-    widjet.deleteGoblin();
-    let anotherRandomNumber = Math.floor(
-      Math.random() * widjet.childrens.length
-    );
-    while (anotherRandomNumber === randomNumber) {
-      anotherRandomNumber = Math.floor(
-        Math.random() * (widjet.childrens.length - 1)
-      );
+  drawBoard() {
+    const board = document.getElementById('board');
+    for (let i = 0; i < this.boardSize; i += 1) {
+      const itemBoard = document.createElement('div');
+      itemBoard.className = 'cell';
+      itemBoard.id = `cell${i}`;
+      board.appendChild(itemBoard);
     }
-    widjet.putGoblin(anotherRandomNumber);
-    randomNumber = anotherRandomNumber;
-  }, 2000);
-});
+
+    this.randomImg();
+  }
+
+  randomImg() {
+    setInterval(() => {
+      do {
+        this.currentIndexCell = Math.floor(Math.random() * this.boardSize);
+      } while (this.currentIndexCell === this.previousIndexCell);
+
+      if (this.previousIndexCell >= 0) {
+        const previousCell = document.getElementById(`cell${this.previousIndexCell}`);
+        previousCell.innerHTML = '';
+      }
+
+      const currentCell = document.getElementById(`cell${this.currentIndexCell}`);
+      currentCell.innerHTML = '<img src = "./img/goblin.png">';
+      this.previousIndexCell = this.currentIndexCell;
+    }, 1000);
+  }
+}
+
+const newBoard = new GameBoard(4);
+newBoard.drawBoard();

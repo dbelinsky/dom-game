@@ -1,4 +1,3 @@
-import '../src/style.css';
-import '../src/js/app.js';
-import '../src/js/goblin.js';
-import '../src/js/src/img/goblin.png';
+import './css/style.css';
+import './js/app';
+import './img/goblin.png';

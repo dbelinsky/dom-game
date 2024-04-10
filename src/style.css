@@ -1,23 +1,32 @@
-* {
-  margin: auto;
-  padding: 0;
+body {
+  background: #eee;
+  text-align: center;
 }
 
 h1 {
   text-align: center;
 }
 
-.widjet-container {
-  width: 50%;
+.board {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  width: 400px;
+  height: 400px;
+  padding: 0px;
+  margin: 50px auto 50px auto;
+  border: 2px solid red;
 }
 
-.hole {
-  width: 20%;
-  height: 10vw;
-  margin: 2%;
-  border: 2px black solid;
-  border-radius: 50%;
+.cell {
+  display: block;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border: black 1px solid;
+  background-color: green;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
