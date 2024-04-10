@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import goblinWidjet from '../goblin';
+import goblinWidjet from '../goblin.js';
 import { test, expect } from '@jest/globals';
 import { JSDOM } from 'jsdom';
 
