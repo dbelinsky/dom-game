@@ -31,13 +31,6 @@ environment:
   GH_TOKEN:
     secure: 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
 
-install:
-
-
-build_script:
-  - npm install
-  - npm run build
-
 on_success:
   - git config --global user.email "you@example.com"
   - git config --global user.name "dbelinsky"
