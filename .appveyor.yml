@@ -32,7 +32,7 @@ environment:
     secure: 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
 
 install:
-  - git config --global credential.helper store
+
 
 build_script:
   - npm install
