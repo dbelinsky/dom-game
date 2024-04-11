@@ -27,8 +27,20 @@ test_script:
   - yarn run lint && yarn notest
 
 deploy_script: # скрипт развёртывания
+environment:
+  GH_TOKEN:
+    secure: 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
+
+install:
   - git config --global credential.helper store
-  - git config --global user.name AppVeyor
-  - git config --global user.email ci@appveyor.com
-  - echo "https://$GH_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+
+build_script:
+  - npm install
+  - npm run build
+
+on_success:
+  - git config --global user.email "you@example.com"
+  - git config --global user.name "dbelinsky"
+  - git add .
+  - git commit -m "Auto-deploy updates [skip ci]"
+  - git push https://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@github.com/dbelinsky/dom-game.git HEAD:gh-pages --force
